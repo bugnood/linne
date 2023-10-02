@@ -13,12 +13,14 @@ struct LoginView: View {
     @State private var email: String = ""
     // パスワード
     @State private var password: String = ""
+    // 背景色の設定
+    let backGroundColor = LinearGradient(gradient: Gradient(colors: [Color.backgroundTop, Color.backgroundBottom]), startPoint: .top, endPoint: .bottom)
     
     var body: some View {
         
         ZStack {
             // 全体の背景カラー
-            // Color.yellow.ignoresSafeArea()
+            backGroundColor.ignoresSafeArea()
             
             VStack(alignment: .center) {
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
