@@ -25,10 +25,24 @@ struct LoginView: View {
             VStack(alignment: .center) {
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                 TextField("email address", text: $email)
+                    .padding(.all)
+                    .frame(height: 60.0)
+                    .background(.textField)
+                    .cornerRadius(50.0)
                 SecureField("password", text: $password)
+                    .padding(.all)
+                    .frame(height: 60.0)
+                    .background(.textField)
+                    .cornerRadius(50.0)
                 Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
                     // 後ほど処理を追加
                 }
+                .foregroundColor(.white)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                .padding(.all)
+                .frame(height: 60.0)
+                .background(.btn)
+                .cornerRadius(50.0)
             }.padding()
             
         }
