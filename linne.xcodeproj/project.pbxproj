@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B64DA81B2ACEE4C40067D3AA /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64DA81A2ACEE4C40067D3AA /* ShareView.swift */; };
 		B67B975C2ACB7D9F00893223 /* linneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B975B2ACB7D9F00893223 /* linneApp.swift */; };
 		B67B975E2ACB7D9F00893223 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B975D2ACB7D9F00893223 /* ContentView.swift */; };
 		B67B97602ACB7DA000893223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67B975F2ACB7DA000893223 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B64DA81A2ACEE4C40067D3AA /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		B67B97582ACB7D9F00893223 /* linne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = linne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67B975B2ACB7D9F00893223 /* linneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = linneApp.swift; sourceTree = "<group>"; };
 		B67B975D2ACB7D9F00893223 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B64DA8192ACEE4A20067D3AA /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				B64DA81A2ACEE4C40067D3AA /* ShareView.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		B67B974F2ACB7D9F00893223 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		B67B975A2ACB7D9F00893223 /* linne */ = {
 			isa = PBXGroup;
 			children = (
+				B64DA8192ACEE4A20067D3AA /* Share */,
 				B67B97882ACB857800893223 /* Extension */,
 				B67B97852ACB7EC100893223 /* Login */,
 				B67B975B2ACB7D9F00893223 /* linneApp.swift */,
@@ -279,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64DA81B2ACEE4C40067D3AA /* ShareView.swift in Sources */,
 				B67B97872ACB7ED000893223 /* LoginView.swift in Sources */,
 				B67B975E2ACB7D9F00893223 /* ContentView.swift in Sources */,
 				B67B975C2ACB7D9F00893223 /* linneApp.swift in Sources */,
