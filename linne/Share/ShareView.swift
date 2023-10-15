@@ -18,30 +18,30 @@ struct ShareView: View {
             // 全体の背景カラー
             backGroundColor.ignoresSafeArea()
             
-            VStack {
+            // スクロールできる範囲
+            ScrollView(showsIndicators: false) {
                 
-                ScrollView(showsIndicators: false) {
+                // 各投稿コンテンツ
+                Grid(horizontalSpacing: 10, verticalSpacing: 10) {
                     
-                    Text("aaa")
+                    ForEach(0..<7) { i in
+                        GridRow {
+                            VStack {
+                                Text("テスト")
+                                Text("サンプル")
+                            }
+                            
+                        }
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .frame(height: 300.0)
+                        .padding()
                         .background(.white)
-                        .cornerRadius(10.0)
-                        .padding(.horizontal)
-                    Text("aaa")
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .frame(height: 300.0)
-                        .background(.white)
-                        .cornerRadius(10.0)
-                        .padding(.horizontal)
-                    Text("aaa")
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .frame(height: 300.0)
-                        .background(.white)
-                        .cornerRadius(10.0)
-                        .padding(.horizontal)
+                        .cornerRadius(3.0)
+                        
+                        
+                    }
                     
                 }
+                .padding()
                 
             }
             
