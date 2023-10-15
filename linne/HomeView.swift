@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    init() {
+            UITabBar.appearance().backgroundColor = .white.withAlphaComponent(1)
+        }
+    
     var body: some View {
         
         // フッター
@@ -16,7 +21,7 @@ struct HomeView: View {
                 ShareView()
                     .tabItem {
                         VStack {
-                            Image(systemName: "folder")
+                            Image(systemName: "house")
                             Text("共有画面")
                         }
                     }

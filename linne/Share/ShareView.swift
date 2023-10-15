@@ -74,12 +74,13 @@ struct ShareView: View {
                                         }
                                     }
                                     Spacer()
-                                    Image("userIcon")
+                                    Image("sample")
                                         .resizable()
                                         .frame(width: 180.0, height: 100.0)
-                                        .overlay(
-                                            RoundedRectangle(cornerRadius: 5)
-                                                .stroke(Color.gray, lineWidth: 1))
+                                        .cornerRadius(5.0)
+//                                        .overlay(
+//                                            RoundedRectangle(cornerRadius: 5)
+//                                                .stroke(Color.gray, lineWidth: 1))
                                 }
                             }
                             .padding(.all, 10.0)
