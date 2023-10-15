@@ -24,22 +24,30 @@ struct ShareView: View {
                 // 各投稿コンテンツ
                 Grid(horizontalSpacing: 10, verticalSpacing: 10) {
                     
-                    ForEach(0..<7) { i in
+                    ForEach(0..<20) { i in
                         GridRow {
-                            VStack {
-                                Text("テスト")
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Image("userIcon")
+                                        .resizable()
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 30)
+                                                .stroke(Color.gray, lineWidth: 1))
+                                        .frame(width: 40, height: 40)
+                                        .cornerRadius(30)
+                                    Text("test.user")
+                                    Spacer()
+                                }
+                                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                                 Text("サンプル")
                             }
+                            .padding(.all, 10.0)
+                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                            .background(.white)
+                            .cornerRadius(10.0)
                             
                         }
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .padding()
-                        .background(.white)
-                        .cornerRadius(3.0)
-                        
-                        
                     }
-                    
                 }
                 .padding()
                 
