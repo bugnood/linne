@@ -40,6 +40,8 @@ struct ShareView: View {
                                 }
                                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                                 Text("サンプル")
+                                    .font(.caption)
+                                    .padding(.leading, 38.0)
                                 Divider()
                                 Text("タイトル")
                                     .fontWeight(.bold)

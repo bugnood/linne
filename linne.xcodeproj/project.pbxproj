@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B64DA81B2ACEE4C40067D3AA /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64DA81A2ACEE4C40067D3AA /* ShareView.swift */; };
+		B6553B332ADC880900DCD38E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6553B322ADC880900DCD38E /* HomeView.swift */; };
 		B67B975C2ACB7D9F00893223 /* linneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B975B2ACB7D9F00893223 /* linneApp.swift */; };
 		B67B975E2ACB7D9F00893223 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B975D2ACB7D9F00893223 /* ContentView.swift */; };
 		B67B97602ACB7DA000893223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67B975F2ACB7DA000893223 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		B64DA81A2ACEE4C40067D3AA /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		B6553B322ADC880900DCD38E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B67B97582ACB7D9F00893223 /* linne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = linne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67B975B2ACB7D9F00893223 /* linneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = linneApp.swift; sourceTree = "<group>"; };
 		B67B975D2ACB7D9F00893223 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				B67B97882ACB857800893223 /* Extension */,
 				B67B97852ACB7EC100893223 /* Login */,
 				B67B975B2ACB7D9F00893223 /* linneApp.swift */,
+				B6553B322ADC880900DCD38E /* HomeView.swift */,
 				B67B975D2ACB7D9F00893223 /* ContentView.swift */,
 				B67B975F2ACB7DA000893223 /* Assets.xcassets */,
 				B67B97612ACB7DA000893223 /* Preview Content */,
@@ -293,6 +296,7 @@
 				B64DA81B2ACEE4C40067D3AA /* ShareView.swift in Sources */,
 				B67B97872ACB7ED000893223 /* LoginView.swift in Sources */,
 				B67B975E2ACB7D9F00893223 /* ContentView.swift in Sources */,
+				B6553B332ADC880900DCD38E /* HomeView.swift in Sources */,
 				B67B975C2ACB7D9F00893223 /* linneApp.swift in Sources */,
 				B67B978A2ACB858E00893223 /* ColorExtension.swift in Sources */,
 			);
