@@ -10,10 +10,12 @@ import SwiftUI
 struct HomeView: View {
     
     init() {
-            UITabBar.appearance().backgroundColor = .white.withAlphaComponent(1)
-        }
+        UITabBar.appearance().backgroundColor = .white.withAlphaComponent(1)
+    }
     
     var body: some View {
+        
+        
         
         // フッター
         HStack {
@@ -22,21 +24,28 @@ struct HomeView: View {
                     .tabItem {
                         VStack {
                             Image(systemName: "house")
-                            Text("共有画面")
                         }
                     }
                 Text("Tab 2")
                     .tabItem {
                         VStack {
-                            Image(systemName: "tray")
-                            Text("Tray")
+                            Image(systemName: "sparkle.magnifyingglass")
+                            //                            Text("Tray")
                         }
                     }
                 Text("Tab 3")
                     .tabItem {
                         VStack {
+                            Image(systemName: "envelope.fill")
+                            //                            Text("External Drive")
+                        }
+                    }
+                    .badge(5)
+                Text("Tab 3")
+                    .tabItem {
+                        VStack {
                             Image(systemName: "externaldrive")
-                            Text("External Drive")
+                            //                            Text("External Drive")
                         }
                     }
             }
