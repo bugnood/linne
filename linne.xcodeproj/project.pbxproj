@@ -18,6 +18,7 @@
 		B67B97792ACB7DA000893223 /* linneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B97782ACB7DA000893223 /* linneUITestsLaunchTests.swift */; };
 		B67B97872ACB7ED000893223 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B97862ACB7ED000893223 /* LoginView.swift */; };
 		B67B978A2ACB858E00893223 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B97892ACB858E00893223 /* ColorExtension.swift */; };
+		B6CF73482AE4DE2C00D1FE81 /* FloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF73472AE4DE2C00D1FE81 /* FloatButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		B67B97782ACB7DA000893223 /* linneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = linneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B67B97862ACB7ED000893223 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B67B97892ACB858E00893223 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		B6CF73472AE4DE2C00D1FE81 /* FloatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		B67B975A2ACB7D9F00893223 /* linne */ = {
 			isa = PBXGroup;
 			children = (
+				B6CF73462AE4DE1100D1FE81 /* ViewParts */,
 				B64DA8192ACEE4A20067D3AA /* Share */,
 				B67B97882ACB857800893223 /* Extension */,
 				B67B97852ACB7EC100893223 /* Login */,
@@ -161,6 +164,14 @@
 				B67B97892ACB858E00893223 /* ColorExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B6CF73462AE4DE1100D1FE81 /* ViewParts */ = {
+			isa = PBXGroup;
+			children = (
+				B6CF73472AE4DE2C00D1FE81 /* FloatButton.swift */,
+			);
+			path = ViewParts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 				B67B97872ACB7ED000893223 /* LoginView.swift in Sources */,
 				B67B975E2ACB7D9F00893223 /* ContentView.swift in Sources */,
 				B6553B332ADC880900DCD38E /* HomeView.swift in Sources */,
+				B6CF73482AE4DE2C00D1FE81 /* FloatButton.swift in Sources */,
 				B67B975C2ACB7D9F00893223 /* linneApp.swift in Sources */,
 				B67B978A2ACB858E00893223 /* ColorExtension.swift in Sources */,
 			);

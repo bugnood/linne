@@ -126,7 +126,7 @@ struct ShareView: View {
                 .padding()
                 
             }
-            
+            FloatButton()
         }
         
     }
