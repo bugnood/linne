@@ -23,10 +23,14 @@ struct FloatButton: View {
                     Image(systemName: "plus")
                         .foregroundColor(.white)
                         .font(.system(size: 40))
-                }).fullScreenCover(isPresented: $show) {
-                    // trueになれば下からふわっと表示
-                    PostView(isActive: $show)
+                }).sheet(isPresented: $show) {
+                    Text("custom")
+                        .presentationDetents([.custom(CustomSheetHeight.self)])
                 }
+//                .fullScreenCover(isPresented: $show) {
+//                    // trueになれば下からふわっと表示
+//                    PostView(isActive: $show)
+//                }
                 .frame(width: 80, height: 80)
                 .background(.btn)
                 .cornerRadius(50.0)
@@ -34,6 +38,13 @@ struct FloatButton: View {
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 25.0))
             }
         }
+    }
+}
+
+// iPadの場合は400、それ以外は200にする
+struct CustomSheetHeight: CustomPresentationDetent {
+    static func height(in context: Context) -> CGFloat? {
+        return UIDevice.current.userInterfaceIdiom == .pad ? 800 : 600
     }
 }
 
