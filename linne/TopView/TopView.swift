@@ -42,12 +42,13 @@ struct TopView: View {
                 }
                 // ログインが成功した時の遷移先
                 .navigationDestination(isPresented: $loginJudgeFlag) {
-                    LoginView()
+                    HomeView()
+                    // 戻るボタンを非表示
+                        .navigationBarBackButtonHidden(true)
                 }
             }
             
         }
-        
     }
 }
 
