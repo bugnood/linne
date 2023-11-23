@@ -30,25 +30,55 @@ struct TopView: View {
                     // ログインID入力フォーム
                     TextField("ログインID", text: $loginId)
                         .autocapitalization(.none)
+                        .modifier(inputStyle())
                     // パスワード入力フォーム
                     SecureField("パスワード", text: $loginPassword)
+                        .modifier(inputStyle())
                     // ログインボタン
-                    Button("Button") {
+                    Button {
                         // パスワード一致判定
                         if (loginPassword == "12345") {
                             self.loginJudgeFlag = true
                         }
+                    } label: {
+                        Text("ログイン")
+                            .modifier(inputButton())
                     }
                 }
                 // ログインが成功した時の遷移先
                 .navigationDestination(isPresented: $loginJudgeFlag) {
                     HomeView()
                     // 戻るボタンを非表示
-                        .navigationBarBackButtonHidden(true)
-                }
+                    .navigationBarBackButtonHidden(true)
+                }.padding()
             }
-            
+
         }
+    }
+}
+
+// 入力フォームのスタイル
+struct inputStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .padding(.all)
+            .frame(height: 60.0)
+            .background(.textField)
+            .cornerRadius(30.0)
+            .accentColor(.white)
+    }
+}
+
+// ログインボタンのスタイル
+struct inputButton: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+        .foregroundColor(.white)
+        .padding(.all)
+        .frame(maxWidth: 400, minHeight: 60.0)
+        .background(.btn)
+        .cornerRadius(30.0)
     }
 }
 
