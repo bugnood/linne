@@ -11,7 +11,7 @@ import SwiftUI
 struct linneApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TopView()
         }
     }
 }
