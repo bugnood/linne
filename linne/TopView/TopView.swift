@@ -26,7 +26,10 @@ struct TopView: View {
             ZStack {
                 // 全体の背景カラー
                 backGroundColor.ignoresSafeArea()
-                VStack {
+                
+                VStack(alignment: .leading) {
+                    Text("Linneへようこそ。")
+                        .modifier(title())
                     // ログインID入力フォーム
                     TextField("ログインID", text: $loginId)
                         .autocapitalization(.none)
@@ -44,15 +47,22 @@ struct TopView: View {
                         Text("ログイン")
                             .modifier(inputButton())
                     }
+                    .padding(.bottom, 20.0)
+                    Text("その他詳細はこちら")
+                        .foregroundColor(.white)
+                        .padding(.bottom, 20.0)
+                    Text("登録することをもって私は、Airbnbのサービス利用規約、Airbnbの差別禁止のポリシー、支払サービス利用規約、個人情報保護ポリシー、ゲスト返金ポリシー、およびホスト保証規約に同意します。")
+                        .foregroundColor(.white.opacity(0.7))
+                        .font(.caption)
                 }
                 // ログインが成功した時の遷移先
                 .navigationDestination(isPresented: $loginJudgeFlag) {
                     HomeView()
                     // 戻るボタンを非表示
-                    .navigationBarBackButtonHidden(true)
+                        .navigationBarBackButtonHidden(true)
                 }.padding()
             }
-
+            
         }
     }
 }
@@ -74,11 +84,21 @@ struct inputStyle: ViewModifier {
 struct inputButton: ViewModifier {
     func body(content: Content) -> some View {
         content
-        .foregroundColor(.white)
-        .padding(.all)
-        .frame(maxWidth: 400, minHeight: 60.0)
-        .background(.btn)
-        .cornerRadius(30.0)
+            .foregroundColor(.white)
+            .padding(.all)
+            .frame(maxWidth: 400, minHeight: 60.0)
+            .background(.btn)
+            .cornerRadius(30.0)
+    }
+}
+
+// タイトルのスタイル
+struct title: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .font(.title)
+            .padding(.bottom, 50.0)
     }
 }
 
