@@ -22,35 +22,64 @@ struct LoginView: View {
             // 全体の背景カラー
             backGroundColor.ignoresSafeArea()
             
-            VStack(alignment: .center) {
-//                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                TextField("email address", text: $email)
+            VStack(alignment: .leading) {
+                // タイトル
+                Text("Login")
+                    .font(.title)
                     .foregroundColor(.white)
-                    .padding(.all)
-                    .frame(height: 60.0)
-                    .background(.textField)
-                    .cornerRadius(50.0)
-                SecureField("password", text: $password)
+                    .padding(.vertical, 100.0)
+                // メールアドレス
+                Text("メールアドレス")
                     .foregroundColor(.white)
-                    .padding(.all)
-                    .frame(height: 60.0)
-                    .background(.textField)
-                    .cornerRadius(50.0)
-                Button(action: {}) {
+                TextField("", text: $email)
+                    .autocapitalization(.none)
+                    .foregroundColor(.white)
+                    .accentColor(.white)
+                Divider()
+                    .background(Color.white)
+                    .padding(.bottom, 20.0)
+                // パスワード
+                Text("パスワード")
+                    .foregroundColor(.white)
+                SecureField("", text: $password)
+                    .autocapitalization(.none)
+                    .foregroundColor(.white)
+                    .accentColor(.white)
+                Divider()
+                    .background(Color.white)
+                    .padding(.bottom, 20.0)
+                // ログインボタン
+                Button {
+                    
+                } label: {
                     Text("ログイン")
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .lineLimit(nil)
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-//                        .padding(.all)
-                        .frame(height: 60.0)
-                        .background(.btn)
-                        .cornerRadius(50.0)
+                        .modifier(loginButton())
                 }
-                
-            }.padding()
-            
+                Spacer()
+            }
+            .padding()
         }
+        .onTapGesture {
+            UIApplication.shared.closeKeyboard()
+        }
+    }
+}
+
+// ログインボタンのスタイル
+struct loginButton: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .padding(.all)
+            .frame(maxWidth: 400, minHeight: 60.0)
+            .background(.btn)
+            .cornerRadius(30.0)
+    }
+}
+
+extension UIApplication {
+    func closeKeyboard() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

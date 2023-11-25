@@ -32,10 +32,12 @@ struct TopView: View {
                 VStack(alignment: .leading) {
                     
                     // アプリアイコン
-                    Image(systemName: "lasso")
+                    Image("linneIcon")
+                        .resizable()
                         .foregroundColor(Color.white)
+                        .frame(width: 100.0, height: 100.0)
                         .font(.largeTitle)
-                        .padding(.bottom, 40.0)
+//                        .padding(.bottom, 40.0)
                     
                     // アプリタイトル
                     Text("Linneへようこそ。")
@@ -56,7 +58,7 @@ struct TopView: View {
                         .modifier(inputButton())
                         .padding(.bottom, 10.0)
                     }.navigationDestination(isPresented: $loginJudgeFlag) {
-                        HomeView()
+                        LoginView()
                     }
                     
                     // 新規登録画面への遷移ボタン
@@ -74,7 +76,7 @@ struct TopView: View {
                         .modifier(inputRegisterButton())
                         .padding(.bottom, 30.0)
                     }.navigationDestination(isPresented: $registerJudgeFlag) {
-                        LoginView()
+                        HomeView()
                     }
                     
                     // 詳細案内文言
@@ -83,7 +85,7 @@ struct TopView: View {
                         .padding(.bottom, 30.0)
                     
                     // 詳細内容
-                    Text("登録することをもって私は、Airbnbのサービス利用規約、Airbnbの差別禁止のポリシー、支払サービス利用規約、個人情報保護ポリシー、ゲスト返金ポリシー、およびホスト保証規約に同意します。")
+                    Text("登録することをもって私は、linneのサービス利用規約、linneの差別禁止のポリシー、支払サービス利用規約、個人情報保護ポリシー、ゲスト返金ポリシー、およびホスト保証規約に同意します。")
                         .foregroundColor(.white.opacity(0.7))
                         .font(.caption)
                 }
@@ -91,6 +93,8 @@ struct TopView: View {
             }
             
         }
+        // 戻るボタンのカラー
+        .tint(.white)
     }
 }
 
