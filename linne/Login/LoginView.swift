@@ -24,10 +24,10 @@ struct LoginView: View {
             
             VStack(alignment: .leading) {
                 // タイトル
-                Text("Login")
+                Text("Linneにログイン")
                     .font(.title)
                     .foregroundColor(.white)
-                    .padding(.vertical, 100.0)
+                    .padding(.vertical, 60.0)
                 // メールアドレス
                 Text("メールアドレス")
                     .foregroundColor(.white)
@@ -55,6 +55,7 @@ struct LoginView: View {
                     Text("ログイン")
                         .modifier(loginButton())
                 }
+                .padding(.bottom, 100.0)
                 Spacer()
             }
             .padding()
