@@ -13,8 +13,10 @@ struct TopView: View {
     @State private var loginId = ""
     // パスワード
     @State private var loginPassword = ""
-    // 画面遷移有効判定フラグ
+    // ログインボタン判定フラグ
     @State private var loginJudgeFlag = false
+    // 新規登録ボタン判定フラグ
+    @State private var registerJudgeFlag = false
     // 共通の背景カラー
     let backGroundColor = LinearGradient(gradient: Gradient(colors: [Color.backgroundTop, Color.backgroundBottom]), startPoint: .top, endPoint: .bottom)
     
@@ -28,55 +30,67 @@ struct TopView: View {
                 backGroundColor.ignoresSafeArea()
                 
                 VStack(alignment: .leading) {
+                    
+                    // アプリアイコン
+                    Image(systemName: "lasso")
+                        .foregroundColor(Color.white)
+                        .font(.largeTitle)
+                        .padding(.bottom, 40.0)
+                    
+                    // アプリタイトル
                     Text("Linneへようこそ。")
                         .modifier(title())
-                    // ログインID入力フォーム
-                    TextField("ログインID", text: $loginId)
-                        .autocapitalization(.none)
-                        .modifier(inputStyle())
-                    // パスワード入力フォーム
-                    SecureField("パスワード", text: $loginPassword)
-                        .modifier(inputStyle())
-                    // ログインボタン
+                    
+                    // ログイン画面への遷移ボタン
                     Button {
-                        // パスワード一致判定
-                        if (loginPassword == "12345") {
-                            self.loginJudgeFlag = true
-                        }
+                        loginJudgeFlag = true
                     } label: {
-                        Text("ログイン")
-                            .modifier(inputButton())
+                        HStack {
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                            Spacer()
+                            Text("ログイン")
+                            Spacer()
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                                .foregroundColor(Color.clear)
+                        }
+                        .modifier(inputButton())
+                        .padding(.bottom, 10.0)
+                    }.navigationDestination(isPresented: $loginJudgeFlag) {
+                        HomeView()
                     }
-                    .padding(.bottom, 20.0)
+                    
+                    // 新規登録画面への遷移ボタン
+                    Button {
+                        registerJudgeFlag = true
+                    } label: {
+                        HStack {
+                            Image(systemName: "person.crop.circle.badge.plus")
+                            Spacer()
+                            Text("アカウントを作成")
+                            Spacer()
+                            Image(systemName: "person.crop.circle.badge.plus")
+                                .foregroundColor(Color.clear)
+                        }
+                        .modifier(inputRegisterButton())
+                        .padding(.bottom, 30.0)
+                    }.navigationDestination(isPresented: $registerJudgeFlag) {
+                        LoginView()
+                    }
+                    
+                    // 詳細案内文言
                     Text("その他詳細はこちら")
                         .foregroundColor(.white)
-                        .padding(.bottom, 20.0)
+                        .padding(.bottom, 30.0)
+                    
+                    // 詳細内容
                     Text("登録することをもって私は、Airbnbのサービス利用規約、Airbnbの差別禁止のポリシー、支払サービス利用規約、個人情報保護ポリシー、ゲスト返金ポリシー、およびホスト保証規約に同意します。")
                         .foregroundColor(.white.opacity(0.7))
                         .font(.caption)
                 }
-                // ログインが成功した時の遷移先
-                .navigationDestination(isPresented: $loginJudgeFlag) {
-                    HomeView()
-                    // 戻るボタンを非表示
-                        .navigationBarBackButtonHidden(true)
-                }.padding()
+                .padding()
             }
             
         }
-    }
-}
-
-// 入力フォームのスタイル
-struct inputStyle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .foregroundColor(.white)
-            .padding(.all)
-            .frame(height: 60.0)
-            .background(.textField)
-            .cornerRadius(30.0)
-            .accentColor(.white)
     }
 }
 
@@ -84,11 +98,25 @@ struct inputStyle: ViewModifier {
 struct inputButton: ViewModifier {
     func body(content: Content) -> some View {
         content
+            .foregroundColor(.backgroundBottom)
+            .padding(.all)
+            .frame(maxWidth: 400, minHeight: 60.0)
+            .background(.white)
+            .cornerRadius(30.0)
+    }
+}
+
+// 新規登録ボタンのスタイル
+struct inputRegisterButton: ViewModifier {
+    func body(content: Content) -> some View {
+        content
             .foregroundColor(.white)
             .padding(.all)
             .frame(maxWidth: 400, minHeight: 60.0)
-            .background(.btn)
-            .cornerRadius(30.0)
+            .overlay(
+                RoundedRectangle(cornerRadius: 30)
+                    .stroke(Color.white, lineWidth: 2)
+            )
     }
 }
 
