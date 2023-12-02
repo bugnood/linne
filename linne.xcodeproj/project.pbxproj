@@ -19,6 +19,7 @@
 		B67B97792ACB7DA000893223 /* linneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B97782ACB7DA000893223 /* linneUITestsLaunchTests.swift */; };
 		B67B97872ACB7ED000893223 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B97862ACB7ED000893223 /* LoginView.swift */; };
 		B67B978A2ACB858E00893223 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67B97892ACB858E00893223 /* ColorExtension.swift */; };
+		B6A3D30B2B1AE3AD00FDC03A /* ShareContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A3D30A2B1AE3AD00FDC03A /* ShareContent.swift */; };
 		B6CF73482AE4DE2C00D1FE81 /* FloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF73472AE4DE2C00D1FE81 /* FloatButton.swift */; };
 		B6CF734B2AE4E38600D1FE81 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CF734A2AE4E38600D1FE81 /* PostView.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		B67B97862ACB7ED000893223 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B67B97892ACB858E00893223 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B67DCE5C2B120FE500E525E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B6A3D30A2B1AE3AD00FDC03A /* ShareContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareContent.swift; sourceTree = "<group>"; };
 		B6CF73472AE4DE2C00D1FE81 /* FloatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatButton.swift; sourceTree = "<group>"; };
 		B6CF734A2AE4E38600D1FE81 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 		B64DA8192ACEE4A20067D3AA /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				B6A3D3092B1AE37200FDC03A /* ShareViewParts */,
 				B64DA81A2ACEE4C40067D3AA /* ShareView.swift */,
 			);
 			path = Share;
@@ -180,6 +183,14 @@
 				B67B97892ACB858E00893223 /* ColorExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B6A3D3092B1AE37200FDC03A /* ShareViewParts */ = {
+			isa = PBXGroup;
+			children = (
+				B6A3D30A2B1AE3AD00FDC03A /* ShareContent.swift */,
+			);
+			path = ShareViewParts;
 			sourceTree = "<group>";
 		};
 		B6CF73462AE4DE1100D1FE81 /* ViewParts */ = {
@@ -333,6 +344,7 @@
 				B6CF734B2AE4E38600D1FE81 /* PostView.swift in Sources */,
 				B67B975E2ACB7D9F00893223 /* ContentView.swift in Sources */,
 				B6553B332ADC880900DCD38E /* HomeView.swift in Sources */,
+				B6A3D30B2B1AE3AD00FDC03A /* ShareContent.swift in Sources */,
 				B6CF73482AE4DE2C00D1FE81 /* FloatButton.swift in Sources */,
 				B67B975C2ACB7D9F00893223 /* linneApp.swift in Sources */,
 				B66B66622B0EEAE0002AFD9E /* TopView.swift in Sources */,
