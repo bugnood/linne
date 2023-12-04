@@ -18,6 +18,10 @@ struct ShareView: View {
             Grid {
                 
                 ForEach(0..<20) { i in
+                    // 一番上の投稿は上線を付与する
+                    if (i == 0) {
+                        Divider()
+                    }
                     // 投稿をカード形式で表示
                     GridRow {
                         ShareContent()

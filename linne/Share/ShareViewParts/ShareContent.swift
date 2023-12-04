@@ -23,7 +23,7 @@ struct ShareContent: View {
                 HStack {
                     // ユーザー名
                     Text("daisuke.abe")
-                        .font(.headline)
+                        .font(.subheadline)
                     // ユーザーID
                     Text("@test_user_1234")
                         .font(.subheadline)
@@ -31,12 +31,13 @@ struct ShareContent: View {
                 }
                 // 投稿内容
                 Text("テスト投稿です。これから自分で入力して、イベントをシェアし、各々で楽しい使い方ができるようにしていきましょう！")
-                    .font(.callout)
+                    .font(.footnote)
             }
             // アイコンエリアとテキストエリアの位置調整
             Spacer()
         }
-        .padding()
+        .padding(.vertical, 5.0)
+        .padding(.leading, 10.0)
     }
 }
 

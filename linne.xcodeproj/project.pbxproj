@@ -134,7 +134,7 @@
 				B6CF73462AE4DE1100D1FE81 /* ViewParts */,
 				B64DA8192ACEE4A20067D3AA /* Share */,
 				B67B97882ACB857800893223 /* Extension */,
-				B67B97852ACB7EC100893223 /* Login */,
+				B67B97852ACB7EC100893223 /* LoginView */,
 				B67B975B2ACB7D9F00893223 /* linneApp.swift */,
 				B6553B322ADC880900DCD38E /* HomeView.swift */,
 				B67B975D2ACB7D9F00893223 /* ContentView.swift */,
@@ -169,12 +169,12 @@
 			path = linneUITests;
 			sourceTree = "<group>";
 		};
-		B67B97852ACB7EC100893223 /* Login */ = {
+		B67B97852ACB7EC100893223 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
 				B67B97862ACB7ED000893223 /* LoginView.swift */,
 			);
-			path = Login;
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 		B67B97882ACB857800893223 /* Extension */ = {
