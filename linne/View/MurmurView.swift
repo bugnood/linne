@@ -10,6 +10,10 @@
 import SwiftUI
 
 struct MurmurView: View {
+    
+    // 投稿内容
+    @State var murmurText: String = ""
+    
     var body: some View {
         // 投稿操作を行うためのボタンエリア
         HStack {
@@ -48,7 +52,17 @@ struct MurmurView: View {
             Image("userIcon")
                 .resizable()
                 .modifier(iconImage())
-            TextEditor(text: .constant("企画内容を呟いて仲間を集めよう！"))
+            ZStack(alignment: .topLeading) {
+                TextEditor(text: $murmurText)
+                // テキストが未入力の場合、プレースホルダーを表示
+                if (murmurText == "") {
+                    Text("企画内容をつぶやこう！")
+                        .foregroundStyle(.gray)
+                        .padding(.top, 7.0)
+                        .padding(.leading, 5.0)
+                        .allowsHitTesting(false)
+                }
+            }
         }.padding()
     }
 }
