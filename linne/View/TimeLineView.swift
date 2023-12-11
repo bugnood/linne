@@ -20,7 +20,7 @@ struct TimeLineView: View {
         Tweet(username: "TwitterUser", tweetText: "Hello SwiftUI!")
     ]
     
-    @State private var newTweetText: String = ""
+    @State private var isPresentingComposeSheet: Bool = false
     
     var body: some View {
         NavigationView {
@@ -38,27 +38,8 @@ struct TimeLineView: View {
                     .padding(.vertical, 8)
                 }
                 .listStyle(PlainListStyle())
-                
-                // Compose Tweet Box
-                HStack {
-                    TextField("What's happening?", text: $newTweetText)
-                        .padding()
-                        .background(Color(.secondarySystemBackground))
-                        .cornerRadius(10)
-                    
-                    Button("Tweet") {
-                        if !newTweetText.isEmpty {
-                            tweets.append(Tweet(username: "CurrentUser", tweetText: newTweetText))
-                            newTweetText = ""
-                        }
-                    }
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                }
-                .padding()
             }
+            .navigationBarTitle("Home")
             .navigationBarItems(trailing:
                                     Button(action: {
                 // Add any action for a right navigation bar button
@@ -66,9 +47,67 @@ struct TimeLineView: View {
                 Image(systemName: "star")
             }
             )
+            .overlay(
+                Button(action: {
+                    isPresentingComposeSheet.toggle()
+                }) {
+                    Image(systemName: "plus")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .padding()
+                        .background(Color.orange)
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                        .padding()
+                        .shadow(radius: 3)
+                }
+                    .padding(.trailing)
+                    .padding(.bottom)
+                , alignment: .bottomTrailing
+            )
+            .sheet(isPresented: $isPresentingComposeSheet) {
+                ComposeView(isPresented: $isPresentingComposeSheet, onTweetPost: { tweetText in
+                    // Handle the new tweet text from the ComposeView
+                    if !tweetText.isEmpty {
+                        tweets.append(Tweet(username: "CurrentUser", tweetText: tweetText))
+                    }
+                })
+            }
         }
     }
 }
+
+struct ComposeView: View {
+    @Binding var isPresented: Bool
+    @State private var tweetText: String = ""
+    var onTweetPost: (String) -> Void
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                TextEditor(text: $tweetText)
+                    .padding()
+                
+                Button("Post Tweet") {
+                    onTweetPost(tweetText)
+                    isPresented.toggle()
+                }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .padding()
+            }
+            .navigationBarTitle("Compose")
+            .navigationBarItems(leading:
+                                    Button("Cancel") {
+                isPresented.toggle()
+            }
+            )
+        }
+    }
+}
+
 
 #Preview {
     TimeLineView()
