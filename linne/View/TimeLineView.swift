@@ -21,6 +21,7 @@ struct TimeLineView: View {
     ]
     
     @State private var isPresentingComposeSheet: Bool = false
+    @State private var newTweetText: String = ""
     
     var body: some View {
         NavigationView {
@@ -41,10 +42,26 @@ struct TimeLineView: View {
             }
             .navigationBarTitle("Home")
             .navigationBarItems(trailing:
-                                    Button(action: {
-                // Add any action for a right navigation bar button
-            }) {
-                Image(systemName: "star")
+                                    HStack {
+                Button(action: {
+                    // Add any action for a right navigation bar button
+                }) {
+                    Image(systemName: "star")
+                }
+                
+                Button(action: {
+                    isPresentingComposeSheet.toggle()
+                }) {
+                    Image(systemName: "plus")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .padding()
+                        .background(Color.orange)
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                        .padding()
+                        .shadow(radius: 3)
+                }
             }
             )
             .overlay(
@@ -73,7 +90,23 @@ struct TimeLineView: View {
                     }
                 })
             }
+            
+            // Footer
+            HStack {
+                Spacer()
+                Text("Your Footer Content Here")
+                    .padding()
+                    .background(Color.gray)
+                    .foregroundColor(.white)
+                Spacer()
+            }
         }
+    }
+}
+
+struct TimeLineView_Previews: PreviewProvider {
+    static var previews: some View {
+        TimeLineView()
     }
 }
 
@@ -88,25 +121,28 @@ struct ComposeView: View {
                 TextEditor(text: $tweetText)
                     .padding()
                 
-                Button("Post Tweet") {
+                Button(action: {
                     onTweetPost(tweetText)
                     isPresented.toggle()
+                }) {
+                    Text("Post Tweet")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding()
                 }
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .padding()
             }
             .navigationBarTitle("Compose")
-            .navigationBarItems(leading:
-                                    Button("Cancel") {
-                isPresented.toggle()
-            }
+            .navigationBarItems(
+                leading: Button("Cancel") {
+                    isPresented.toggle()
+                }
             )
         }
     }
 }
+
 
 
 #Preview {
